@@ -1,0 +1,488 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "533ee57a-5376-4f3f-b6e9-d169bb63abac",
+   "metadata": {},
+   "source": [
+    "# Name: shardul jayanta panchal\n",
+    "# P.R.N.:24030332905031\n",
+    "\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ce56670d-8f21-48ae-8626-e8476ab4fec4",
+   "metadata": {},
+   "source": [
+    "# ASSIGNMENT:-01"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "0cb150b5-87a8-4573-99c4-a7f685aef33d",
+   "metadata": {},
+   "source": [
+    "1] Check the given number is odd or even."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "1abdbe7f-b740-42a9-b65d-e26df110151d",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter the number: 3\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The number 3 is odd.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def check_odd_even(number):\n",
+    "    if number%2==0:\n",
+    "        return \"even\"\n",
+    "    else:\n",
+    "        return \"odd\"\n",
+    "num=int(input(\"Enter the number:\"))\n",
+    "print(f\"The number {num} is {check_odd_even(num)}.\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "e7949208-1720-4391-94d3-47221ee688fb",
+   "metadata": {},
+   "source": [
+    "2] Count the total number of digits in a number."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "6a0fc34e-d015-4f43-a97b-53ee4598d155",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter the number:  123465\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The number 123465 is having 6 digits in it.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def count_digit(number):\n",
+    "    return len(str(abs(number)))\n",
+    "num=int(input(\"Enter the number: \"))\n",
+    "print(f\"The number {num} is having {count_digit(num)} digits in it.\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "ac202162-eba4-425c-b0d0-017bba2618bb",
+   "metadata": {},
+   "source": [
+    "3] Write a Python program to print the reverse number pattern using a for loop\n",
+    "5 4 3 2 1\n",
+    "4 3 2 1\n",
+    "3 2 1\n",
+    "2 1\n",
+    "1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "edebe658-69ad-4291-9148-99b38dc6da87",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "enter the number: 6\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6 5 4 3 2 1 \n",
+      "5 4 3 2 1 \n",
+      "4 3 2 1 \n",
+      "3 2 1 \n",
+      "2 1 \n",
+      "1 \n"
+     ]
+    }
+   ],
+   "source": [
+    "def reverse_number_pattern(n):\n",
+    "    for i in range (n, 0, -1):\n",
+    "        for j in range (i, 0, -1):\n",
+    "            print(j, end=\" \")\n",
+    "        print()\n",
+    "        \n",
+    "num=int(input(\"enter the number:\"))\n",
+    "reverse_number_pattern(num)"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "d9a54822-37ad-40a4-b03c-313ca3f6769d",
+   "metadata": {},
+   "source": [
+    "4]Print all prime numbers within a range."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "0a14d355-1dba-4e1b-ad0c-1b66e66a0e3a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "enter the start of the range 1\n",
+      "enter the end of the range 7\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Prime numbers between 1 and7\n",
+      "5 7 \n"
+     ]
+    }
+   ],
+   "source": [
+    "def print_primes(start, end):\n",
+    "    for num in range (start, end+1):\n",
+    "        if num>1:\n",
+    "\n",
+    "            for i in range (2, int(num**0.5)+1):\n",
+    "                if num%i==0:\n",
+    "                    break\n",
+    "                else:\n",
+    "                    print(num, end=\" \")\n",
+    "    print()\n",
+    "\n",
+    "start_range = int(input(\"enter the start of the range\"))\n",
+    "end_range = int(input(\"enter the end of the range\"))\n",
+    "print(f\"Prime numbers between {start_range} and{end_range}\")\n",
+    "print_primes(start_range, end_range)\n",
+    "                    "
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "5cfc08f5-71e6-4225-b530-f4b8ab3e3ca6",
+   "metadata": {},
+   "source": [
+    "5]Find the factorial of a given number."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "863aeb74-563b-403f-8d80-c94e3ca279bb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "enter the number: 5\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The factorial of 5 is 120.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def factorial(n):\n",
+    "    if n==0 or n==1:\n",
+    "        return 1\n",
+    "    else:\n",
+    "        return n * factorial(n-1)\n",
+    "num= int(input(\"enter the number:\"))\n",
+    "print(f\"The factorial of {num} is {factorial(num)}.\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "0421e6f0-f08a-4b04-a25d-dca36fa422a4",
+   "metadata": {},
+   "source": [
+    "6]Program to check if number is palindrome."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "dacd94b6-20bc-4d08-938d-14974db3f391",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "enter the number: 121\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the number 121 is palindrome\n"
+     ]
+    }
+   ],
+   "source": [
+    "def is_palindrome(number):\n",
+    "    return str(number) == str(number)[::-1]\n",
+    "\n",
+    "num= int(input(\"enter the number:\"))\n",
+    "if is_palindrome(num):\n",
+    "    print(f\"the number {num} is palindrome\")\n",
+    "else:\n",
+    "    print(f\"the number {num} is not palindrome\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "795c1ffb-ba80-4d93-ac1b-6f855b8b9090",
+   "metadata": {},
+   "source": [
+    "7]Program to Check Armstrong Number."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "d9f38fcb-bfa6-4adc-b987-9f4a04805891",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a number:  153\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The number 153 is an Armstrong number.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def is_armstrong(number):\n",
+    "    num_str = str(number)\n",
+    "    power = len(num_str)\n",
+    "    total = sum(int(digit) ** power for digit in num_str)\n",
+    "    return total == number\n",
+    "\n",
+    "\n",
+    "num = int(input(\"Enter a number: \"))\n",
+    "if is_armstrong(num):\n",
+    "    print(f\"The number {num} is an Armstrong number.\")\n",
+    "else:\n",
+    "    print(f\"The number {num} is not an Armstrong number.\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "fa6132de-da0e-43d1-b7e4-c2b083b7ae3c",
+   "metadata": {},
+   "source": [
+    "8]Find Maximum of three numbers."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "922fb61a-364b-4af2-b5f4-abed63633430",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter first number:  1\n",
+      "Enter second number:  6\n",
+      "Enter third number:  4\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The maximum number among 1, 6, and 4 is 6.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def find_maximum(a, b, c):\n",
+    "    return max(a, b, c)\n",
+    "\n",
+    "\n",
+    "num1 = int(input(\"Enter first number: \"))\n",
+    "num2 = int(input(\"Enter second number: \"))\n",
+    "num3 = int(input(\"Enter third number: \"))\n",
+    "print(f\"The maximum number among {num1}, {num2}, and {num3} is {find_maximum(num1, num2, num3)}.\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "b7ba677b-6e27-45fb-af93-212277bb1fdf",
+   "metadata": {},
+   "source": [
+    "9]Find the Sum of digits."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "38ff9c5d-a2d1-4510-b56d-549a19415b82",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a number:  4321\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The sum of digits in 4321 is 10.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def sum_of_digits(number):\n",
+    "    return sum(int(digit) for digit in str(abs(number)))\n",
+    "\n",
+    "\n",
+    "num = int(input(\"Enter a number: \"))\n",
+    "print(f\"The sum of digits in {num} is {sum_of_digits(num)}.\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "c2fc9af7-c4a0-43c2-a58f-0bce852e5b2d",
+   "metadata": {},
+   "source": [
+    "10]Python Program to Print the Natural Numbers Summation Pattern\n",
+    "Given a natural number n, the task is to write a Python program to first find the sum of first n\n",
+    "natural numbers and then print each step as a pattern.\n",
+    "Input: 5\n",
+    "Output:\n",
+    "1 = 1\n",
+    "1 + 2 = 3\n",
+    "1 + 2 + 3 = 6\n",
+    "1 + 2 + 3 + 4 = 10\n",
+    "1 + 2 + 3 + 4 + 5 = 15"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "d962518d-f5c2-434f-88ec-e23b5d5be95a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a natural number:  5\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1 = 1\n",
+      "1 + 2 = 3\n",
+      "1 + 2 + 3 = 6\n",
+      "1 + 2 + 3 + 4 = 10\n",
+      "1 + 2 + 3 + 4 + 5 = 15\n"
+     ]
+    }
+   ],
+   "source": [
+    "def summation_pattern(n):\n",
+    "    total = 0\n",
+    "    for i in range(1, n + 1):\n",
+    "        total += i\n",
+    "        print(\" + \".join(map(str, range(1, i + 1))), \"=\", total)\n",
+    "\n",
+    "\n",
+    "num = int(input(\"Enter a natural number: \"))\n",
+    "summation_pattern(num)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8f10e061-c42d-44f4-8b11-fa61ed2dd288",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
